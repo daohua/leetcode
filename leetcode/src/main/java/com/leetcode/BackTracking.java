@@ -406,24 +406,35 @@ public class BackTracking {
     public static List<String> generateParenthesis(int n) {
         List<String> ret = new ArrayList<String>();
         if(n==0) return ret;
-        backTracking(ret, "", n);
+        dfs(ret, "", n, n);
         return ret;
     }
     
-    public static void backTracking(List<String> ret, String temp, int n){
-        if(temp.length()==2*n){
+    public static void dfs(List<String> ret, String temp, int left, int right){
+    	if(left>right) return;
+        if(left==0 && right==0){
             ret.add(temp);
             return;
         }
-        temp+="(";
-//        if(temp.substring(0,))
-        backTracking(ret, temp, n);
-        temp.substring(0, temp.length()-1);
+        if(left>0){
+        	dfs(ret, temp+"(", left-1, right);
+        }
+        if(right>0){
+        	dfs(ret, temp+")", left, right-1);
+        }
     }
     
 	public static void main(String[] args) {
-		String s = " a ";
-		System.out.println(lengthOfLastWord(s));
+
+		List<String> ret = generateParenthesis(2);
+		for(String s:ret){
+			System.out.println(s);
+		}
+		
+		
+		
+//		String s = " a ";
+//		System.out.println(lengthOfLastWord(s));
 		// TODO Auto-generated method stub
 //		int [] can = {1,1,2};
 //		List<List<Integer>> ret = combinationSum2(can, 3);

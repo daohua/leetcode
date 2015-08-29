@@ -117,6 +117,7 @@ public class Str {
         }
         return res.toString();
     }
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] nums = {1,0};
