@@ -193,7 +193,7 @@ public class Tree {
 		int diffHeight = left>right?left-right:right-left;
 		if(diffHeight>1) return -1;
 		else{
-			return Integer.max(left, right)+1;
+			return java.lang.Math.max(left, right)+1;
 		}
 	}
 	

@@ -16,7 +16,7 @@ public class Dynamic {
 		
 		for(int i=1;i<nums.length;i++){
 			
-			min = Integer.min(nums[i], min);
+			min = java.lang.Math.min(nums[i], min);
 			int cur = nums[i]-min;
 			if(cur>max){
 				max=cur;
@@ -37,7 +37,7 @@ public class Dynamic {
 		
 		for(int i=1;i<nums.length;i++){
 			
-			min = Integer.min(nums[i], min);
+			min = java.lang.Math.min(nums[i], min);
 			int cur = nums[i]-min;
 			if(cur>0){
 				max+=cur;
@@ -131,7 +131,7 @@ public class Dynamic {
 		
 		for(int i=1;i<m;i++){
 			for(int j=1;j<n;j++){
-				dp[i][j]=Integer.min(dp[i-1][j],dp[i][j-1])+grid[i][j];
+				dp[i][j]=java.lang.Math.min(dp[i-1][j],dp[i][j-1])+grid[i][j];
 			}
 		}
 		return dp[m-1][n-1];
@@ -147,7 +147,7 @@ public class Dynamic {
 		int max = Integer.MIN_VALUE;
 		for(int i=1;i<nums.length;i++){
 			sum+=nums[i];
-			Integer.max(sum,max);
+			java.lang.Math.max(sum,max);
 			if(sum==0) sum=0;
 		}
 		return max;
@@ -168,22 +168,22 @@ public class Dynamic {
 		int mid = start+(end-start)/2;
 		int lmax = divide(nums, start, mid-1, tmax);
 		int rmax = divide(nums, mid+1, end, tmax);
-		tmax = Integer.max(tmax, lmax);
-		tmax= Integer.max(tmax, rmax);
+		tmax = java.lang.Math.max(tmax, lmax);
+		tmax= java.lang.Math.max(tmax, rmax);
 		int sum = 0;
 		int mlmax = 0;
 		int mrmax = 0;
 		for(int i=mid;i>=start;i--){
 			sum+=nums[i];
-			mlmax=Integer.max(mlmax, sum);
+			mlmax=java.lang.Math.max(mlmax, sum);
 		}
 		sum = 0;
 		for(int j=mid+1;j<=end;j++){
 			sum+=nums[j];
-			mrmax=Integer.max(mrmax,sum);
+			mrmax=java.lang.Math.max(mrmax,sum);
 		}
 		
-		tmax = Integer.max(tmax, mlmax+nums[mid]+mrmax);
+		tmax = java.lang.Math.max(tmax, mlmax+nums[mid]+mrmax);
 		return   tmax;
 	}
 	
@@ -202,9 +202,9 @@ public class Dynamic {
 		
 		for(int i =1; i<nums.length;i++){
 			int t = maxDP;
-			maxDP = Integer.max(Integer.max(maxDP*nums[i], nums[i]), minDP*nums[i]);
-			minDP = Integer.min(Integer.min(t*nums[i], nums[i]), minDP*nums[i]);
-			p = Integer.max(maxDP, p);
+			maxDP = java.lang.Math.max(java.lang.Math.max(maxDP*nums[i], nums[i]), minDP*nums[i]);
+			minDP = java.lang.Math.min(java.lang.Math.min(t*nums[i], nums[i]), minDP*nums[i]);
+			p = java.lang.Math.max(maxDP, p);
 		}
 		return p;
 	}
@@ -245,7 +245,7 @@ public class Dynamic {
 		
 		for(int i=rows-2;i>=0;i--){
 			for(int j=0;j<=i;j++){
-				dp[j] = triangle.get(i).get(j)+Integer.min(dp[j], dp[j+1]);
+				dp[j] = triangle.get(i).get(j)+java.lang.Math.min(dp[j], dp[j+1]);
 			}
 		}
 		return dp[0];

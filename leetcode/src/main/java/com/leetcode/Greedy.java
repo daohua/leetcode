@@ -1,5 +1,7 @@
 package com.leetcode;
 
+import java.util.*;
+import java.lang.*;
 public class Greedy {
 	
 	/**
@@ -38,7 +40,8 @@ public class Greedy {
         while(i<n){
             if(cur>=n-1) break;
             while(i<=cur){
-                next = Integer.max(next, i+nums[i]);
+            	
+                next = java.lang.Math.max(next, i+nums[i]);
                 ++i;
             }
             ++step;

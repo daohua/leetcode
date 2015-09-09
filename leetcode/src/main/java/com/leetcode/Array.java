@@ -1,5 +1,5 @@
 package com.leetcode;
-import java.lang.Integer;
+
 
 public class Array {
 	
@@ -51,7 +51,7 @@ public class Array {
 		
 		if(a.length==0) return 0;
 		else if(a.length==1) return a[0];
-		else if(a.length==2) return Integer.min(a[0],a[1]);
+		else if(a.length==2) return java.lang.Math.min(a[0],a[1]);
 		
 		int start=0;
 		int stop =a.length-1;
@@ -68,7 +68,7 @@ public class Array {
 				stop=mid;
 			}
 		}
-		return Integer.min(a[start], a[stop]);
+		return java.lang.Math.min(a[start], a[stop]);
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class Array {
 			return a[0];
 		}
 		else if(a.length==2){
-			return Integer.min(a[0], a[1]);
+			return java.lang.Math.min(a[0], a[1]);
 		}
 		
 		int start =0;
@@ -103,7 +103,7 @@ public class Array {
 				++start;
 			}
 		}
-		return Integer.min(a[start], a[stop]);
+		return java.lang.Math.min(a[start], a[stop]);
 		
 	}
 	
